@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/css/animate.css">
+    <link rel="stylesheet" href="./static/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="./static/fonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="./static/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./static/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>更改主页资料</title>
+    <style>
+        body {
+            background-image: url("./static/images/picture.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            width: 100%;
+            height: 80%;
+            background-size: 100% 120%;
+            position: absolute;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
+        }
+
+        .outborder {
+            margin-top: 140px;
+        }
+
+        .writer {
+            color: white;
+            font-size: large;
+        }
+
+        .changerow {
+            margin: 0;
+        }
+
+        .changeform-control {
+            border-radius: 8px;
+        }
+
+        .changeshow {
+            opacity: 0.9;
+        }
+
+        .changeform-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .addlastbottom {
+            margin-bottom: 5rem;
+        }
+
+        .oneline {
+            display: block;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<header role="banner" class="index80">
+    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container" style="max-width: 100%;">
+            <a class="navbar-brand absolute" href="https://www.ifeels.cn">IFEELS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="paddingleft9 nav-link fon active" href="/{{ my_tel }}/home.html">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link paddingleft9" href="/{{ my_tel }}/aboutme.html">个人资料</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link paddingleft9" href="/{{ my_tel }}/all_project.html">项目展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link paddingleft9" href="/{{ my_tel }}/blog.html">博客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link paddingleft9" href="/{{ my_tel }}/callme.html">联系我</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav absolute-right" style="height:100%;">
+                    <li class="nav-item ">
+                        <a id="my_img" href="/{{ my_tel }}/home.html" class="nav-link paddingleft9"
+                           style="height: 100%;padding-top: 20px">
+                            <!--                            <img src="{{ my_id_photo }}-->"
+                            <img src="#"
+                                 style="height: 48px;width: 48px;border-radius: 100%;line-height: 50%">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link paddingleft9">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container outborder">
+    <form class="form-horizontal" action="home.html" method="post">
+        {% csrf_token %}
+        <div class="form-group changeform-group">
+            <label for="inputname" class="col-sm-3 control-label writer oneline" style="text-align:center">昵称</label>
+            <div class="col-sm-7 must oneline">
+                <input type="text" class="form-control changeform-control changeshow" id="inputname" placeholder="昵称">
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="form-group changeform-group">
+            <label for="inputqianming" class="col-sm-3 control-label writer oneline"
+                   style="text-align:center">主页签名</label>
+            <div class="col-sm-7 must oneline">
+                <input type="text" class="form-control changeform-control changeshow" id="inputqianming"
+                       placeholder="主页签名">
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="form-group addlastbottom">
+            <label for="inputjianjie" class="col-sm-3 control-label writer oneline"
+                   style="text-align:center">主页简介</label>
+            <div class="row changerow col-sm-7 oneline" style="padding:0 15px;">
+                <textarea class="form-control changeform-control changeshow" rows="6" id="inputjianjie"
+                          placeholder="主页简介"></textarea>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div style="text-align:center;">
+            <button type="submit" class="btn btn-primary btn-lg active changeform-control">提交</button>
+            <button type="button" class="btn btn-default btn-lg active changeform-control" id="delete">取消</button>
+        </div>
+    </form>
+</div>
+
+<script src="./static/js/jquery-3.2.1.min.js"></script>
+<script>
+    $('#delete').click(function () {
+        window.history.back()
+    })
+</script>
+</body>
+</html>
