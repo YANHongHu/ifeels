@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
 
@@ -157,17 +158,17 @@
             <div class="col-sm-3 control-label writer oneline">上传证件照</div>
             <div class="col-sm-5 must oneline">
                 <div class="input-group">
-                    <input id='location' class="form-control inputfile changeform-control changeshow"
-                           onclick="$('#i-file').click();">
+                    <input id='location1' class="form-control inputfile changeform-control changeshow"
+                           onclick="$('#i-photo').click();">
                     <label class="input-group-btn">
                         <input type="button" id="i-check" value="浏览照片"
                                style="line-height: 3px;background-color:#004085;border: 0px"
                                class="btn btn-primary inputfile changeform-controlright"
-                               onclick="$('#i-file').click();">
+                               onclick="$('#i-photo').click();">
                     </label>
                 </div>
-                <input type="file" name="id_photo" id='i-file' accept=".xls, .xlsx"
-                       onchange="$('#location').val($('#i-file').val());" style="display: none">
+                <input type="file" name="id_photo" id='i-photo'
+                       onchange="$('#location1').val($('#i-photo').val());" style="display: none">
             </div>
             <div style="clear: both;"></div>
         </div>
@@ -175,17 +176,17 @@
             <div class="col-sm-3 control-label writer oneline">上传简历</div>
             <div class="col-sm-5 must oneline">
                 <div class="input-group">
-                    <input id='location' class="form-control inputfile changeform-control changeshow"
+                    <input id='location2' class="form-control inputfile changeform-control changeshow"
                            onclick="$('#i-file').click();">
                     <label class="input-group-btn">
-                        <input type="button" id="i-check" value="浏览文件"
+                        <input type="button" id="i-check2" value="浏览文件"
                                style="line-height: 3px;background-color:#004085;border: 0px"
                                class="btn btn-primary inputfile changeform-controlright"
                                onclick="$('#i-file').click();">
                     </label>
                 </div>
-                <input type="file" name="resume" id='i-file' accept=".xls, .xlsx"
-                       onchange="$('#location').val($('#i-file').val());" style="display: none">
+                <input type="file" name="resume" id='i-file'
+                       onchange="$('#location2').val($('#i-file').val());" style="display: none">
             </div>
             <div style="clear: both;"></div>
         </div>
